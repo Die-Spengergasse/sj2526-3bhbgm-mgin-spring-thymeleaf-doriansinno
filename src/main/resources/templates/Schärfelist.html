@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Schärfe-Liste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h2>Schärfe-Liste</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Chili-Art</th>
+            <th>Schärfe (1–10)</th>
+            <th>Scoville (SHU)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s : ${schaerfen}">
+            <td th:text="${s.chiliArt}"></td>
+            <td th:text="${s.schaerfe}"></td>
+            <td th:text="${s.scoville}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/schaerfe/add">neue Chili-Schärfe anlegen</a>
+        &nbsp;|&nbsp;
+        <a href="/">zur Startseite</a>
+    </p>
+</div>
+</body>
+</html>

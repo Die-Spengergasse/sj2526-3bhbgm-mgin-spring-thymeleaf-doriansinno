@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>neue Chili-Schärfe anlegen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h2>Neue Chili-Schärfe anlegen</h2>
+    <form th:action="@{/schaerfe/add}" th:object="${schaerfe}" method="post">
+        <input type="text" th:field="*{chiliArt}" class="form-control" placeholder="Chili-Art (z. B. Jalapeño, Habanero)">
+        Schärfegrad (1–10)
+        <input type="number" min="0" max="10" step="1" th:field="*{schaerfe}" class="form-control">
+        Scoville (SHU)
+        <input type="number" min="0" step="100" th:field="*{scoville}" class="form-control">
+        <input type="submit" class="form-control" value="Speichern" style="margin-top:10px">
+    </form>
+
+    <p style="margin-top: 10px">
+        <a href="/schaerfe/list">zurück zur Schärfe-Liste</a>
+    </p>
+</div>
+</body>
+</html>

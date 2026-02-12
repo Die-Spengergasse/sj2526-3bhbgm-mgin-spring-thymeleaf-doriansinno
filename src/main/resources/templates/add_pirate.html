@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>neuen Piraten anlegen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+
+
+    <form th:action="@{/pirate/add}" th:object="${pirate}" method="post">
+
+        <input type="text" th:field="*{name}" class="form-control" placeholder="Piratenname">
+        <!-- Datumsfeld für die Piraten. -->
+        Geburtsdatum <input type="date" th:field="*{birth}" class="form-control">
+        <input type="submit" class="form-control" value="Speichern">
+    </form>
+
+    <p style="margin-top: 10px">
+        <a href="/pirate/list">zurück zur Piratenliste</a>
+    </p>
+</div>
+</body>
+</html>

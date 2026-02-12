@@ -1,0 +1,33 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Piratenliste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Geburt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${pirates}">
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.birth}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/pirate/add">neuen Piraten anlegen</a>  <!-- link  glaube ich -->
+        &nbsp;|&nbsp;
+        <a href="/">zur Startseite</a>
+    </p>
+</div>
+</body>
+</html>
