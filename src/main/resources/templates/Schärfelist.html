@@ -15,13 +15,17 @@
             <th>Chili-Art</th>
             <th>Schärfe (1–10)</th>
             <th>Scoville (SHU)</th>
+            <th>Aktionen</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="s : ${schaerfen}">
-            <td th:text="${s.chiliArt}"></td>
+            <td th:text="${s.chiliArt}"></td> <!-- hier muss ich den Namen der Variable nehmen, die ich in SchaerfeController.java in der Methode listSchaerfen() definiert habe, also schaerfen -->
             <td th:text="${s.schaerfe}"></td>
             <td th:text="${s.scoville}"></td>
+            <td>
+                <a th:href="@{/schaerfe/delete/{id}(id=${s.id})}" class="btn btn-danger btn-xs">Löschen</a>
+            </td>
         </tr>
         </tbody>
     </table>

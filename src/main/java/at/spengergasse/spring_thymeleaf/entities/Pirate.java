@@ -7,14 +7,7 @@ import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
-/**
- * Einfache JPA-Entity „Pirate“ (Pirat), analog zu „Patient“.
- *
- * Erklärung:
- * - @Entity markiert die Klasse als persistierbar (wird von JPA/Hibernate verwaltet).
- * - @Id kennzeichnet den Primärschlüssel.
- * - @GeneratedValue(strategy = GenerationType.IDENTITY) sagt, dass die Datenbank die ID fortlaufend vergibt.
- */
+
 @Entity
 public class Pirate {
     @Id

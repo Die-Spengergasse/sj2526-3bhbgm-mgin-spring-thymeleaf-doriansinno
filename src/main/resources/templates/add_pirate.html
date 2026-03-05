@@ -1,25 +1,50 @@
+<!-- Definiert den Dokumenttyp: HTML5. -->
 <!DOCTYPE html>
+<!-- Start-Tag der HTML-Seite mit Sprache und Thymeleaf-Namensraum. -->
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!-- Kopfbereich der Seite beginnt. -->
 <head>
+    <!-- Zeichensatz-Einstellung: UTF-8 unterstützt Umlaute und Sonderzeichen. -->
     <meta charset="UTF-8">
+    <!-- Titel, der im Browser-Tab angezeigt wird. -->
     <title>neuen Piraten anlegen</title>
+    <!-- Externes Stylesheet (Bootstrap) für fertige Layout-Klassen. -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- Kopfbereich endet. -->
 </head>
+<!-- Sichtbarer Bereich der Seite beginnt. -->
 <body>
+<!-- Bootstrap-Container für zentrierten Inhalt und Abstände. -->
 <div class="container">
+<!-- Leerzeile: sorgt für optischen Abstand im Code. -->
 
+<!-- Noch eine Leerzeile für bessere Lesbarkeit. -->
 
+    <!-- Formular: sendet Daten per POST an /pirate/add und bindet das Objekt "pirate". -->
     <form th:action="@{/pirate/add}" th:object="${pirate}" method="post">
+    <!-- Leerzeile zur Strukturierung innerhalb des Formulars. -->
 
+        <!-- Texteingabe für den Namen des Piraten; mit dem Feld "name" des Objekts verknüpft. -->
         <input type="text" th:field="*{name}" class="form-control" placeholder="Piratenname">
+        <!-- Kommentar im Template: Hinweis, dass darunter das Datumsfeld kommt. -->
         <!-- Datumsfeld für die Piraten. -->
+        <!-- Beschriftung und Eingabefeld für das Geburtsdatum; verknüpft mit dem Feld "birth". -->
         Geburtsdatum <input type="date" th:field="*{birth}" class="form-control">
+        <!-- Absende-Button: speichert die Eingaben. -->
         <input type="submit" class="form-control" value="Speichern">
+    <!-- Ende des Formulars. -->
     </form>
+    <!-- Leerzeile zwischen Formular und Link-Bereich. -->
 
+    <!-- Absatz mit etwas Abstand nach oben (10px). -->
     <p style="margin-top: 10px">
+        <!-- Link zurück zur Liste aller Piraten. -->
         <a href="/pirate/list">zurück zur Piratenliste</a>
     </p>
+<!-- Ende des Containers. -->
 </div>
+<!-- Ende des sichtbaren Seitenbereichs. -->
 </body>
+<!-- Ende des HTML-Dokuments. -->
 </html>
+<!-- Letzte Leerzeile. -->

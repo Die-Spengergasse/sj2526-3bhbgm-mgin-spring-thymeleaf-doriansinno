@@ -11,6 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Controller für Patienten.
+ *
+ * Erklärung:
+ * - @RequestMapping("/patient") setzt den Pfad-Präfix für alle Methoden.
+ * - Verwendet PatientRepository, um Daten aus der DB zu laden/speichern.
+ */
 @Controller
 @RequestMapping("/patient")
 public class PatientController {
@@ -20,18 +27,27 @@ public class PatientController {
         this.patientRepository = patientRepository;
     }
 
+    /**
+     * Zeigt die Liste aller Patienten.
+     */
     @GetMapping("/list")
     public String patients(Model model) {
         model.addAttribute("patients", patientRepository.findAll());
         return "patlist";
     }
 
+    /**
+     * Zeigt das Formular zum Anlegen eines neuen Patienten.
+     */
     @GetMapping("/add")
     public String addPatient(Model model) {
         model.addAttribute("patient", new Patient());
         return "add_patient";
     }
 
+    /**
+     * Nimmt die Formulardaten entgegen, speichert sie und leitet zur Liste weiter.
+     */
     @PostMapping("/add")
     public String addPatient(@ModelAttribute("patient") Patient patient) {
         patientRepository.save(patient);

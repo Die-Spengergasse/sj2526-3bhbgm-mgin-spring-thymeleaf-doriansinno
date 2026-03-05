@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Chilli löschen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h2>Chilli löschen</h2>
+    <p>Wollen Sie die Chilli-Art <b th:text="${schaerfe.chiliArt}"></b> wirklich löschen?</p>
+    <form th:action="@{/schaerfe/delete/{id}(id=${schaerfe.id})}" method="post">
+        <input type="submit" class="form-control" value="Ja, löschen" style="margin-top:10px">
+    </form>
+    <p style="margin-top: 10px">
+        <a href="/schaerfe/list">Nein, zurück zur Schärfe-Liste</a>
+    </p>
+</div>
+</body>
+</html>

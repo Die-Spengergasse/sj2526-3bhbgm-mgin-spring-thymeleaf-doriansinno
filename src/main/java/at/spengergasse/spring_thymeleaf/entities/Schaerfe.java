@@ -5,14 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-/**
- * Einfache JPA-Entity für Chili-Schärfe Angaben.
- *
- * Felder:
- * - chiliArt: Name/Varietät der Chili (z. B. Jalapeño, Habanero)
- * - schaerfe: frei wählbarer Schärfegrad (z. B. 1–10)
- * - scoville: Scoville Heat Units (SHU) als numerischer Wert
- */
 @Entity
 public class Schaerfe {
     @Id
@@ -21,9 +13,17 @@ public class Schaerfe {
 
     private String chiliArt; // Name/Art der Chili
     private Integer schaerfe; // Schärfegrad (z. B. 1–10)
-    private Integer scoville; // Scoville Heat Units (SHU)
+    private Integer scoville; // Scoville )
 
     // Getter/Setter werden von Spring/Thymeleaf für Binding benötigt
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getChiliArt() {
         return chiliArt;
     }
